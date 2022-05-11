@@ -1,0 +1,1 @@
+console.log("Hello New World from js console.")
