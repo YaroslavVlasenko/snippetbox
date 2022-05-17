@@ -18,6 +18,12 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	snippets, err := app.snippets.Latest()
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
 	files := []string{
 		"./ui/html/base.tmpl",
 		"./ui/html/partials/nav.tmpl",
@@ -26,19 +32,20 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		// Because the home handler function is now a method against application
-		// it can access its fields, including the error logger. We'll write the log
-		// message to this instead of the standard logger.
-		app.errorLog.Println(err.Error())
-		app.serverError(w, err) // Use the serverError() helper.
+		app.serverError(w, err)
 		return
 	}
 
-	err = ts.ExecuteTemplate(w, "base", nil)
+	// Create an instance of a templateData struct holding the slice of
+	// snippets.
+	data := &templateData{
+		Snippets: snippets,
+	}
+
+	// Pass in the templateData struct when executing the template.
+	err = ts.ExecuteTemplate(w, "base", data)
 	if err != nil {
-		// Also update the code here to use the error logger from the application
-		// struct.
-		app.serverError(w, err) // Use the serverError() helper.
+		app.serverError(w, err)
 	}
 }
 
