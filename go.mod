@@ -6,6 +6,7 @@ require (
 	github.com/cosmtrek/air v1.29.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
+	github.com/go-playground/form/v4 v4.2.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
