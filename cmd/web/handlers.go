@@ -35,28 +35,28 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
-	params := httprouter.ParamsFromContext(r.Context())
+    params := httprouter.ParamsFromContext(r.Context())
 
-	id, err := strconv.Atoi(params.ByName("id"))
-	if err != nil || id < 1 {
-		app.notFound(w)
-		return
-	}
+    id, err := strconv.Atoi(params.ByName("id"))
+    if err != nil || id < 1 {
+        app.notFound(w)
+        return
+    }
 
-	snippet, err := app.snippets.Get(id)
-	if err != nil {
-		if errors.Is(err, models.ErrNoRecord) {
-			app.notFound(w)
-		} else {
-			app.serverError(w, err)
-		}
-		return
-	}
+    snippet, err := app.snippets.Get(id)
+    if err != nil {
+        if errors.Is(err, models.ErrNoRecord) {
+            app.notFound(w)
+        } else {
+            app.serverError(w, err)
+        }
+        return
+    }
 
-	data := app.newTemplateData(r)
-	data.Snippet = snippet
+    data := app.newTemplateData(r)
+    data.Snippet = snippet
 
-	app.render(w, http.StatusOK, "view.tmpl", data)
+    app.render(w, http.StatusOK, "view.tmpl", data)
 }
 
 func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
