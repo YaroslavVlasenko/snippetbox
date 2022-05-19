@@ -3,6 +3,8 @@ module github.com/YaroslavVlasenko/snippetbox
 go 1.18
 
 require (
+	github.com/alexedwards/scs/mysqlstore v0.0.0-20220216073957-c252878bcf5a // indirect
+	github.com/alexedwards/scs/v2 v2.5.0 // indirect
 	github.com/cosmtrek/air v1.29.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect

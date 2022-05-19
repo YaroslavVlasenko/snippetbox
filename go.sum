@@ -1,3 +1,7 @@
+github.com/alexedwards/scs/mysqlstore v0.0.0-20220216073957-c252878bcf5a h1:lh8DJfZ/MZdOK+UzQrNN9zVHysVxRB/R7OPUnv8TsE0=
+github.com/alexedwards/scs/mysqlstore v0.0.0-20220216073957-c252878bcf5a/go.mod h1:MKLf409wtunSUZ+5eUwPzlfGYSpITYzJZ4UZzU5rMoY=
+github.com/alexedwards/scs/v2 v2.5.0 h1:zgxOfNFmiJyXG7UPIuw1g2b9LWBeRLh3PjfB9BDmfL4=
+github.com/alexedwards/scs/v2 v2.5.0/go.mod h1:ToaROZxyKukJKT/xLcVQAChi5k6+Pn1Gvmdl7h3RRj8=
 github.com/cosmtrek/air v1.29.0 h1:6fptSDBDrNdXKz+Q1xHYbLJRoMiChaBu7YkfRHZpAPc=
 github.com/cosmtrek/air v1.29.0/go.mod h1:I/kZTPQfF8qS+4h7zmQDxEB9lGAeQ3R2tWeCYvPPAY0=
 github.com/fatih/color v1.13.0 h1:8LOYc1KYPPmyKMuN8QV2DNRWNbLo6LZ0iLs8+mlH53w=
