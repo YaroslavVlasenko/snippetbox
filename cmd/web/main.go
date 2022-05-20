@@ -16,13 +16,11 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// Define an application struct to hold the application-wide dependencies for the
-// web application. For now we'll only include fields for the two custom loggers, but
-// we'll add more to it as the build progresses.
 type application struct {
 	errorLog       *log.Logger
 	infoLog        *log.Logger
 	snippets       *models.SnippetModel
+	users          *models.UserModel
 	templateCache  map[string]*template.Template
 	formDecoder    *form.Decoder
 	sessionManager *scs.SessionManager
@@ -60,6 +58,7 @@ func main() {
 		errorLog:       errorLog,
 		infoLog:        infoLog,
 		snippets:       &models.SnippetModel{DB: db},
+		users:          &models.UserModel{DB: db},
 		templateCache:  templateCache,
 		formDecoder:    formDecoder,
 		sessionManager: sessionManager,
