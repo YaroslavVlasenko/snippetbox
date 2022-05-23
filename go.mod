@@ -13,6 +13,7 @@ require (
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
 	github.com/justinas/alice v1.2.0 // indirect
+	github.com/justinas/nosurf v1.1.1 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect

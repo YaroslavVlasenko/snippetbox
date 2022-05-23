@@ -17,8 +17,9 @@ type templateData struct {
 	Snippet         *models.Snippet
 	Snippets        []*models.Snippet
 	Form            any
-	Flash           string // Add a Flash field to the templateData struct.
-	IsAuthenticated bool   // Add an IsAuthenticated field to the templateData struct.
+	Flash           string
+	IsAuthenticated bool
+	CSRFToken       string
 }
 
 // Create a humanDate function which returns a nicely formatted string
